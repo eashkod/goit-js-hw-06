@@ -8,16 +8,14 @@ const ingredients = [
 ];
 
 const ingredientsEl = document.querySelector("#ingredients");
-//console.log(ingredientsEl);
 
-const listItemEl = [];
-ingredients.forEach((element) => {
-  const linkItemEl = document.createElement("li");
-  linkItemEl.textContent = element;
-  linkItemEl.classList.add("item");
-  //console.log(linkItemEl);
-  listItemEl.push(linkItemEl);
+const elements = ingredients.map((ingredient) => {
+  const listItemEl = document.createElement("li");
+  listItemEl.textContent = ingredient;
+  listItemEl.classList.add("item");
+
+  return listItemEl;
 });
-//console.log(listItemEl)
 
-ingredientsEl.append(...listItemEl);
+ingredientsEl.append(...elements);
+
